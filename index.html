@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BalkawaTV - Live cricket</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+   
+    <div class="header">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h1><span style="border-bottom: 4px solid red;border-left: 8px solid red;border-radius:5px;">Balkawa<span style="color:red;">TV</span><span></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-5">
+            <div class="control-box p-3">
+               <button class="btn btn-info" id="server1" onclick="changeServer(this.id,'http://wstream.to/live/wqwhcj')">Server 1</button>
+            </div>
+            <div class="control-box p-3">
+               <button class="btn btn-info" id="server2" onclick="changeServer(this.id,'http://a1.cric7.site/')">Server 2</button>
+            </div>
+            <div class="control-box p-3">
+               <button class="btn btn-info" id="server3" onclick="changeServer(this.id,'http://a2.cric7.site/')">Server 3</button>
+            </div>
+            <div class="control-box p-3">
+              <button class="btn btn-info" id="server4" onclick="changeServer(this.id,'http://a3.cric7.site/')">Server 4</button>
+            </div>
+            
+          </div>
+          <div class="col-md-8">
+            <div class="control-box p-2 breadcrumb">
+              <p><strong>BalkawaTV: </strong> Live Cricket-- <span id="msg" style="font-weight: bold;">Server 1 is running</span> </p>
+            </div>
+            <div class="control-box p-3 main-content">
+             <iframe id="myframe" width="700" height="420" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen  src="https://wstream.to/embed/wqwhcj" scrolling="no"></iframe>
+             <!-- <iframe width="700" height="500" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen  src="https://www.mycricketlive.live/" scrolling="no"></iframe> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="https://use.fontawesome.com/b4aae4cb0e.js"></script>
+    <script type="text/javascript" src="https://cdn.rawgit.com/leafo/sticky-kit/v1.1.2/jquery.sticky-kit.min.js"></script>
+    <script type="text/javascript">
+      $(".sidebar").stick_in_parent();
+      // $('#server1').click(function(){
+      //    document.getElementsByTagName('iframe').src = "http://a1.cric7.site/";
+      // });
+      // $('#server2').click(function(){
+      //   document.getElementsByTagName('iframe').src = "http://a2.cric7.site/";
+      // });
+      function changeServer(id,url){
+        document.getElementById('myframe').src = url;
+        var sid = id;
+        var text = document.getElementById(sid).innerHTML;
+        document.getElementById('msg').innerHTML =" "+ text+" is running";
+
+      }
+    </script>
+  </body>
+</html>
